@@ -19,7 +19,7 @@ function App() {
       });
   };
   
-  useEffect(loadData, [])
+  useEffect(loadData, [notesList.length])
   return (
     <div className="App">
       <header>
@@ -28,8 +28,8 @@ function App() {
           <button onClick={loadData}>Update</button>
         </div>
       </header>
-      <NotesList notes={notesList} loadData={loadData} />
-      <NoteForm loadData={loadData} />
+      <NotesList notes={notesList} />
+      <NoteForm />
     </div>
   );
 }

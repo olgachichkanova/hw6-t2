@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import shortid from "shortid"
 
-const NoteForm = ({loadData}) => {
+const NoteForm = () => {
     const url = 'http://localhost:7777/notes';
     const [note, setNote] = useState("")
     const postData = (e, note) => {
@@ -13,9 +13,7 @@ const NoteForm = ({loadData}) => {
           },
           body: JSON.stringify({ id: shortid.generate(), content: note }),
         };
-        fetch(url, requestOptions).then((res) =>
-            loadData()
-        );
+        fetch(url, requestOptions).then((res) => res);
         
         setNote("")
     };
