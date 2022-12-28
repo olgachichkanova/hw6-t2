@@ -28,8 +28,8 @@ function App() {
           <button onClick={loadData}>Update</button>
         </div>
       </header>
-      <NotesList notes={notesList} />
-      <NoteForm />
+      <NotesList notes={notesList} loadData={loadData} />
+      <NoteForm loadData={loadData} />
     </div>
   );
 }
